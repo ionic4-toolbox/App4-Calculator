@@ -11,7 +11,7 @@ export class AddEventPage {
   event = { title: "", location: "", message: "", startDate: "", endDate: "" };
 
   constructor(public alertController: AlertController,
-    public navCtrl: NavController,
+    public navController: NavController,
     public navParams: NavParams,
     private calendar: Calendar) {
   }
@@ -24,7 +24,7 @@ export class AddEventPage {
     this.calendar.createEvent(this.event.title, this.event.location, this.event.message, new Date(this.event.startDate), new Date(this.event.endDate)).then(
       (msg) => {
         this.presentAlert('Success!', '', 'Event saved successfully');
-        // this.navCtrl.pop();
+        // this.navController.pop();
       },
       (err) => {
         this.presentAlert('Success!', '', 'Event saved successfully');

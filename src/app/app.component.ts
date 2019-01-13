@@ -27,11 +27,17 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
   ) {
+    console.log('AppComponent::constructur | ');
+
     this.initializeApp();
   }
 
   initializeApp() {
+    console.log('AppComponent::constructur | ');
+
     this.platform.ready().then(() => {
+      console.log('AppComponent::constructur | platform.ready');
+
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
